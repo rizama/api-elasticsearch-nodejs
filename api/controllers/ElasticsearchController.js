@@ -29,13 +29,9 @@ exports.result = async (req, res) => {
           index: "products",
           body: {
             query: {
-              range: {
-                created: {
-                  gte: "01-01-2017",
-                  lte: "01-01-2018",
-                  format: "dd-MM-yyy"
-                }
-              }
+              // prefix: { tags: { value: "vege" } }
+              // wildcard: { tags: "*" }
+              regexp: { tags: "veget[a-zA-Z]+ble" }
             }
           }
         },
